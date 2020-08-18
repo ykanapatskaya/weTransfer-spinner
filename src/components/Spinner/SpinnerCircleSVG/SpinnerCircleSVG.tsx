@@ -39,7 +39,7 @@ export const SpinnerCircleSVG: React.FC = () => {
         }}
       />
       <circle
-        className={styles.trackingCircle}
+        className={styles.loadingCircle}
         r={innerRadius}
         cx={radius}
         cy={radius}

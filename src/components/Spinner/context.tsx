@@ -2,14 +2,11 @@ import { createContext } from 'react';
 import { Status, Sizes } from './types';
 import { radiusSizes } from './constants';
 
-const logWarning = () =>
-  console.warn('[Spinner] SpinnerContext was accessed outside of Spinner.');
-
 export interface SpinnerContextProps {
-  percentage: number;
-  status: Status
-  size: Sizes;
-  radius: number;
+  percentage?: number;
+  status?: Status
+  size?: Sizes;
+  radius?: number;
 }
 
 export const SpinnerContext = createContext<SpinnerContextProps>({

@@ -30,7 +30,7 @@ $rotationSpeed: 2s;
   stroke: #E8EBED;
 }
 
-.trackingCircle {
+.loadingCircle {
   transition: stroke-dashoffset $animationSpeed linear, stroke $animationSpeed linear;
   stroke-linecap: round;
   stroke: #409FFF;

@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import classNames from 'classnames';
 
 import { SpinnerContext, SpinnerContextProps } from './context';
 import { SpinnerCircleSVG } from './SpinnerCircleSVG';
@@ -9,12 +8,16 @@ import { Status, Sizes } from './types';
 import styles from './Spinner.css';
 
 export interface SpinnerProps {
-  percentage: number;
-  status: Status;
+  percentage?: number;
+  status?: Status;
   size?: Sizes;
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({ percentage, status, size = Sizes.MEDIUM }) => {
+export const Spinner: React.FC<SpinnerProps> = ({
+  percentage = 0,
+  size = Sizes.MEDIUM,
+  status = Status.NOT_STARTED
+}) => {
   const radius = useMemo(() => radiusSizes[size], [size]);
 
   const context = useMemo(() => ({
@@ -32,6 +35,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ percentage, status, size = Siz
     <SpinnerContext.Provider value={context}>
       <div
         className={styles.container}
+        data-tag="spinner"
         style={{ width: radius*2+'px', height: radius*2+'px'}}
       >
         <SpinnerCircleSVG />
@@ -40,6 +44,4 @@ export const Spinner: React.FC<SpinnerProps> = ({ percentage, status, size = Siz
     </SpinnerContext.Provider>
   )
 };
-
-
 

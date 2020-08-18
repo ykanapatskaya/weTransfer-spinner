@@ -18,5 +18,5 @@ export const SpinnerLabel: React.FC = () => {
         <span className={styles.percentSign}>%</span>
       </div>
     </div>
-  )
+  );
 };

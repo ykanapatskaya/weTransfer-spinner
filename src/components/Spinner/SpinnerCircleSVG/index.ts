@@ -1,0 +1,1 @@
+export { SpinnerCircleSVG } from './SpinnerCircleSVG'

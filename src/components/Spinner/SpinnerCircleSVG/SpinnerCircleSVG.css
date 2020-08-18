@@ -1,0 +1,37 @@
+$animationSpeed: 0.2s;
+$rotationSpeed: 2s;
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+
+  &--processing {
+    animation: rotation $rotationSpeed linear infinite;
+  }
+
+   &--paused {
+    animation: rotation $rotationSpeed linear infinite;
+    animation-play-state: paused;
+  }
+}
+
+.backgroundCircle {
+  stroke-dashoffset: 0;
+  stroke: #E8EBED;
+}
+
+.trackingCircle {
+  transition: stroke-dashoffset $animationSpeed linear, stroke $animationSpeed linear;
+  stroke-linecap: round;
+  stroke: #409FFF;
+}

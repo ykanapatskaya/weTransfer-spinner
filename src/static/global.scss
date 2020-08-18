@@ -1,0 +1,16 @@
+@import '_reset';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Helvetica Neue, Lucida Grande, sans-serif;
+}
+
+button {
+  font-family: inherit;
+}

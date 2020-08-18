@@ -1,0 +1,1 @@
+export { SpinnerLabel } from './SpinnerLabel';
